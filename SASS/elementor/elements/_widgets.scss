@@ -1,25 +1,10 @@
 
-/***
- * Utilities
- ***/
-.elementor-align-center {
-  text-align: center;
-}
-.elementor-align-right {
-  text-align: right;
-}
-.elementor-align-left {
-  text-align: left;
-}
-.elementor-align-justify {
-  text-align: justify;
-}
+
 
 /**
  * Widget Widths
  */
 .elementor-widget {
-  // Basic max width
   max-width: max-width($text-mw);
   margin-left: auto;
   margin-right: auto;
@@ -27,16 +12,11 @@
   width: 100%;
 }
 
-.elementor-section-boxed .elementor-widget {
-  margin-bottom: spacing(5);
-  // @include marg($v: 4);
-
-  @include breakpoint-min($col_bp) {
-    margin-bottom: spacing(6);
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+/****
+ * Margin for section boxed widgets
+ *******/
+.elementor-widget {
+  @include marg($v: 2);
 }
 
 .elementor-widget-video,
@@ -125,20 +105,4 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
-}
-
-
-.widget--boxed {
-  @include pad($v: 4);
-  @include grid_pad();
-  margin-top: spacing(6);
-
-  @include breakpoint-min($col_bp) {
-    margin-top: 0;
-  }
-}
-
-.widget--border {
-  border: 1px solid;
-  border-color: inherit;
 }

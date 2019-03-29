@@ -16,7 +16,8 @@
 }
 
 @each $palette, $color in $palettes {
-  .color--#{$palette} .elementor-button {
+  .color--#{$palette} .elementor-button,
+  .c-#{$palette} .elementor-button {
     @include button-color($palette, filled);
   }
 }
@@ -27,7 +28,8 @@
 }
 
 @each $palette, $color in $palettes {
-  .color--#{$palette} .elementor-element.elementor-button-info .elementor-button {
+  .color--#{$palette} .elementor-element.elementor-button-info .elementor-button,
+  .c-#{$palette} .elementor-element.elementor-button-info .elementor-button {
     @include button-color($palette, empty-d);
   }
 }

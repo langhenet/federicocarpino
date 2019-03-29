@@ -29,7 +29,17 @@
   }
 }
 
-.column--force-right {
+/*****
+ * Custom Force
+ ***/
+.column--force-right,
+.cforce-r {
+
+  // include basic padding when a custom padding is not yet declared
+  &:not([class*="pv-"]):not([class*="pt-"]):not([class*="pb-"]) {
+    @include pad($v: $l_v_md);
+  }
+
   .elementor-column-wrap {
     @include layout-padding($xl: 0, $lg: 0);
     @include breakpoint-min(lg) {
@@ -46,7 +56,14 @@
   }
 }
 
-.column--force-left {
+.column--force-left,
+.cforce-l {
+
+  // include basic padding when a custom padding is not yet declared
+  &:not([class*="pv-"]):not([class*="pt-"]):not([class*="pb-"]) {
+    @include pad($v: $l_v_md);
+  }
+
   .elementor-column-wrap {
     @include layout-padding($xl: 0, $lg: 0);
     @include breakpoint-min(lg) {
@@ -63,33 +80,58 @@
   }
 }
 
+// when column are colored, add padding rules, but not if a previous padding is already declared
 @each $palette, $color in $palettes {
-  .elementor-column.color--#{$palette} {
-    @include pad($v: $l_v_md);
+  .elementor-section-full_width:not(.section--grid) .elementor-column.color--#{$palette},
+  .elementor-section-full_width:not(.section--grid) .elementor-column.c-#{$palette} {
+
+    &:not([class*="pv-"]):not([class*="pt-"]):not([class*="pb-"]) {
+      @include pad($v: $l_v_md);
+    }
   }
 }
 
+// Media elements on full with sections have no max-width
+.elementor-section-full_width .elementor-widget-image,
+.elementor-section-full_width .elementor-widget-video,
+.elementor-section-full_width .elementor-widged-map {
+  max-width: none;
+}
 
+
+/***********************************************************************
+ * Grid sections
+ *****************************/
 .section--grid {
 
   .elementor-column {
-    @include grid_pad();
-    @include pad($v: $l_v_md);
+    @include pad($v: 0);
   }
 
-  .elementor-column-gap-narrow .elementor-column {
+  .elementor-column-wrap {
+    @include pad($v: $l_v_md);
+
+    @include breakpoint-max($col_bp) {
+      @include layout-padding($lg: false, $xl: false);
+    }
+
+    @include col_pad();
+
+  }
+
+  .elementor-column-gap-narrow .elementor-column-wrap {
     @include pad($v: $l_v_xs);
   }
-  .elementor-column-gap-extended .elementor-column {
+  .elementor-column-gap-extended .elementor-column-wrap {
     @include pad($v: $l_v_sm);
   }
-  .elementor-column-gap-narrow .elementor-column {
+  .elementor-column-gap-narrow .elementor-column-wrap {
     @include pad($v: $l_v_xs);
   }
-  .elementor-column-gap-wide .elementor-column {
+  .elementor-column-gap-wide .elementor-column-wrap {
     @include pad($v: $l_v_lg);
   }
-  .elementor-column-gap-wider .elementor-column {
+  .elementor-column-gap-wider .elementor-column-wrap {
     @include pad($v: $l_v_xl);
   }
 }

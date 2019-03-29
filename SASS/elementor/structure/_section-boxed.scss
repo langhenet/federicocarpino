@@ -7,7 +7,7 @@
  ****************************************************************************************/
 .elementor-section-boxed:not(.elementor-inner-section) {
   @include marg($v: $l_v_sm);
-  
+
   @include breakpoint-min($col_bp) {
     @include marg($v: $l_v_md);
 
@@ -150,7 +150,8 @@
 }
 
 @each $palette, $color in $palettes {
-  .color--#{$palette} .section--border-center .elementor-column {
+  .color--#{$palette} .section--border-center .elementor-column,
+  .c-#{$palette} .section--border-center .elementor-column {
     border-color: palette($palette, border);
   }
 }

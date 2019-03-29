@@ -1,0 +1,30 @@
+/***
+ * Layout overflow
+ ****/
+.lof {
+  &-m {
+    @include breakpoint-max(md) {
+      @include layout-overflow($lg: false, $xl: false);
+      max-width: none;
+    }
+  }
+}
+
+
+/****
+ * Boxed stuff
+ ****/
+.box-md {
+  padding: $l_h_md;
+
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding: $l_h_md;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding: $l_h_md;
+    }
+  }
+}

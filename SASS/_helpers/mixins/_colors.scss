@@ -1,0 +1,34 @@
+@mixin color($palette) {
+  background-color: palette($palette, bg);
+  color: palette($palette, body);
+
+  * {
+    border-color: palette($palette, border);
+  }
+
+  // h1, h2, h3, h4, h5, h6 {
+  //   color: palette($palette, heading);
+  // }
+
+  .elementor-text-editor > p > a,
+  .elementor-text-editor > ul > li > a,
+  .elementor-text-editor > ol > li > a {
+    @include link($palette);
+  }
+
+  ::selection {
+    background-color: palette($palette, accent);
+    color: palette($palette, bg);
+    text-shadow: none;
+  }
+
+  blockquote,
+  blockquote p {
+    color: rgba(palette($palette, body), 0.8);
+
+    &::after,
+    &::before {
+      color: rgba(palette($palette, body), 0.2);
+    }
+  }
+}

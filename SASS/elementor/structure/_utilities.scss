@@ -1,0 +1,63 @@
+/***
+ * Text algin
+ ***/
+.elementor-align-center {
+  text-align: center;
+}
+.elementor-align-right {
+  text-align: right;
+}
+.elementor-align-left {
+  text-align: left;
+}
+.elementor-align-justify {
+  text-align: justify;
+}
+
+/***
+ * Hidden
+  *****/
+.elementor-hidden {
+  display: none; }
+.elementor-invisible {
+  visibility: hidden; }
+
+
+@include breakpoint-max(md) {
+  .elementor:not(.elementor-edit-area-active) .elementor-hidden-phone {
+    display: none; }
+}
+
+@include breakpoint-bet($col_bp, md) {
+  .elementor:not(.elementor-edit-area-active) .elementor-hidden-tablet {
+    display: none;
+  }
+}
+
+@include breakpoint-min($col_bp) {
+  .elementor:not(.elementor-edit-area-active) .elementor-hidden-desktop {
+    display: none; }
+}
+
+.elementor-screen-only,
+.screen-reader-text,
+.screen-reader-text span,
+.ui-helper-hidden-accessible {
+  position: absolute;
+  top: -10000em;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+/********************
+ * Positioning
+ ********************/
+.elementor-widget-wrap > .elementor-element.elementor-absolute {
+ position: absolute; }
+
+.elementor-widget-wrap > .elementor-element.elementor-fixed {
+ position: fixed; }
