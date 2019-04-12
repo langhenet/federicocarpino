@@ -119,7 +119,7 @@
 }
 
 @mixin grid_marg() {
-  @include marg($h: $xs_gutter);
+  @include marg($h: -$xs_gutter);
 
   @each $bp, $bps in $grid_gutters {
     @include breakpoint-min($bp) {
