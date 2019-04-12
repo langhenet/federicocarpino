@@ -4,10 +4,16 @@
 .elementor-section {
   @include layout-overflow();
   position: relative;
+}
 
-  * {
-    background-position: center;
-  }
+/**
+* Bg defaults
+**/
+.elementor-section,
+.elementor-column-wrap {
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
 
 /****

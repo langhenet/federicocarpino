@@ -15,8 +15,22 @@
 /****
  * Margin for section boxed widgets
  *******/
-.elementor-widget {
-  @include marg($v: 2);
+.elementor-section-boxed .elementor-widget {
+  &:not([class*="mv-"]):not([class*="mt-"]) {
+    margin-top: spacing(2);
+  }
+  &:not([class*="mv-"]):not([class*="mb-"]) {
+    margin-bottom: spacing(2);
+  }
+}
+
+.elementor-section-full_width .elementor-widget {
+  &:not([class*="mv-"]):not([class*="mt-"]):not(:first-child) {
+    margin-top: spacing(2);
+  }
+  &:not([class*="mv-"]):not([class*="mb-"]):not(:last-child) {
+    margin-bottom: spacing(2);
+  }
 }
 
 .elementor-widget-video,
@@ -34,12 +48,15 @@
 
 @include breakpoint-min(lg) {
   // Alternative max widths
+  .wd-wide,
   .widget--wide {
     max-width: max-width(sm);
   }
+  .wd-wider,
   .widget--wider {
     max-width: max-width(md);
   }
+  .wd-full,
   .widget--full {
     max-width: 100%;
     min-width: 100%;

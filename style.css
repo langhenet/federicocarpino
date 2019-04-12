@@ -1651,8 +1651,16 @@ a {
 /****
  * Margin for section boxed widgets
  *******/
-.elementor-widget {
-  margin-top: 0.71875rem;
+.elementor-section-boxed .elementor-widget:not([class*="mv-"]):not([class*="mt-"]) {
+  margin-top: 0.71875rem; }
+
+.elementor-section-boxed .elementor-widget:not([class*="mv-"]):not([class*="mb-"]) {
+  margin-bottom: 0.71875rem; }
+
+.elementor-section-full_width .elementor-widget:not([class*="mv-"]):not([class*="mt-"]):not(:first-child) {
+  margin-top: 0.71875rem; }
+
+.elementor-section-full_width .elementor-widget:not([class*="mv-"]):not([class*="mb-"]):not(:last-child) {
   margin-bottom: 0.71875rem; }
 
 .elementor-widget-video,
@@ -2097,8 +2105,16 @@ a {
     .elementor-section {
       margin-left: -2.33594rem;
       margin-right: -2.33594rem; } }
-  .elementor-section * {
-    background-position: center; }
+
+/**
+* Bg defaults
+**/
+.elementor-section,
+.elementor-column-wrap {
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat; }
 
 /****
  * Vertical widget align
@@ -2340,12 +2356,16 @@ a {
 *                     maximim width, that equals the width of the website
  *
  ****************************************************************************************/
-.elementor-section-boxed:not(.elementor-inner-section) {
-  margin-top: 2.875rem;
+.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mt-"]) {
+  margin-top: 2.875rem; }
+  @media (min-width: 60em) {
+    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mt-"]) {
+      margin-top: 5.75rem; } }
+
+.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mb-"]) {
   margin-bottom: 2.875rem; }
   @media (min-width: 60em) {
-    .elementor-section-boxed:not(.elementor-inner-section) {
-      margin-top: 5.75rem;
+    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mb-"]) {
       margin-bottom: 5.75rem; } }
 
 /**
@@ -2463,13 +2483,37 @@ a {
 .c-main .section--border-center .elementor-column {
   border-color: rgba(0, 0, 0, 0.2); }
 
+.elementor-section-boxed.color--main:not([class*="pv-"]):not([class*="pt-"]),
+.elementor-section-boxed.c-main:not([class*="pv-"]):not([class*="pt-"]) {
+  padding-top: 5.75rem; }
+
+.elementor-section-boxed.color--main:not([class*="pv-"]):not([class*="pb-"]),
+.elementor-section-boxed.c-main:not([class*="pv-"]):not([class*="pb-"]) {
+  padding-bottom: 5.75rem; }
+
 .color--dark .section--border-center .elementor-column,
 .c-dark .section--border-center .elementor-column {
   border-color: #fff; }
 
+.elementor-section-boxed.color--dark:not([class*="pv-"]):not([class*="pt-"]),
+.elementor-section-boxed.c-dark:not([class*="pv-"]):not([class*="pt-"]) {
+  padding-top: 5.75rem; }
+
+.elementor-section-boxed.color--dark:not([class*="pv-"]):not([class*="pb-"]),
+.elementor-section-boxed.c-dark:not([class*="pv-"]):not([class*="pb-"]) {
+  padding-bottom: 5.75rem; }
+
 .color--light .section--border-center .elementor-column,
 .c-light .section--border-center .elementor-column {
   border-color: rgba(0, 0, 0, 0.85); }
+
+.elementor-section-boxed.color--light:not([class*="pv-"]):not([class*="pt-"]),
+.elementor-section-boxed.c-light:not([class*="pv-"]):not([class*="pt-"]) {
+  padding-top: 5.75rem; }
+
+.elementor-section-boxed.color--light:not([class*="pv-"]):not([class*="pb-"]),
+.elementor-section-boxed.c-light:not([class*="pv-"]):not([class*="pb-"]) {
+  padding-bottom: 5.75rem; }
 
 /**
  * Standard column gutter and layout

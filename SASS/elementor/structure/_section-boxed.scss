@@ -6,11 +6,17 @@
  *
  ****************************************************************************************/
 .elementor-section-boxed:not(.elementor-inner-section) {
-  @include marg($v: $l_v_sm);
-
-  @include breakpoint-min($col_bp) {
-    @include marg($v: $l_v_md);
-
+  &:not([class*="mv-"]):not([class*="mt-"]) {
+    margin-top: $l_v_sm;
+    @include breakpoint-min($col_bp) {
+      margin-top: $l_v_md;
+    }
+  }
+  &:not([class*="mv-"]):not([class*="mb-"]) {
+    margin-bottom: $l_v_sm;
+    @include breakpoint-min($col_bp) {
+      margin-bottom: $l_v_md;
+    }
   }
 }
 /**
@@ -153,5 +159,15 @@
   .color--#{$palette} .section--border-center .elementor-column,
   .c-#{$palette} .section--border-center .elementor-column {
     border-color: palette($palette, border);
+  }
+
+  .elementor-section-boxed.color--#{$palette},
+  .elementor-section-boxed.c-#{$palette} {
+    &:not([class*="pv-"]):not([class*="pt-"]) {
+      padding-top: $l_v_md;
+    }
+    &:not([class*="pv-"]):not([class*="pb-"]) {
+      padding-bottom: $l_v_md;
+    }
   }
 }
