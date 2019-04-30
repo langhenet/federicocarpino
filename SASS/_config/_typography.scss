@@ -39,6 +39,9 @@ $text-atts: (
   weight: wt,
 );
 
+////
+// Line height formula
+// target (in px) / base (16) 
 $fonts: (
   h1: (
     fm: $ff-secondary,

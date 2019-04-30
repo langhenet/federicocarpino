@@ -247,3 +247,249 @@
     }
   }
 }
+
+/*********
+ * Horizontal padding
+ *************/
+.ph-none {
+  @include pad($h: 0);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: 0);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: 0);
+    }
+  }
+}
+.ph-xs {
+  @include pad($h: $l_h_xs);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: $l_h_xs);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: $l_h_xs);
+    }
+  }
+}
+.ph-sm {
+  @include pad($h: $l_h_sm);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: $l_h_sm);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: $l_h_sm);
+    }
+  }
+}
+.ph-md {
+  @include pad($h: $l_h_md);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: $l_h_md);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: $l_h_md);
+    }
+  }
+}
+.ph-lg {
+  @include pad($h: $l_h_lg);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: $l_h_lg);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: $l_h_lg);
+    }
+  }
+}
+.ph-xl {
+  @include pad($h: $l_h_xl);
+  &-d {
+    @include breakpoint-min($col_bp) {
+      @include pad($h: $l_h_xl);
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      @include pad($h: $l_h_xl);
+    }
+  }
+}
+
+/***********
+ * Left padding
+ ****************/
+.pl-none {
+  padding-left: 0;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: 0;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: 0;
+    }
+  }
+}
+.pl-xs {
+  padding-left: $l_h_sm;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: $l_h_sm;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: $l_h_sm;
+    }
+  }
+}
+.pl-sm {
+  padding-left: $l_h_sm;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: $l_h_sm;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: $l_h_sm;
+    }
+  }
+}
+.pl-md {
+  padding-left: $l_h_md;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: $l_h_md;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: $l_h_md;
+    }
+  }
+}
+.pl-lg {
+  padding-left: $l_h_lg;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: $l_h_lg;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: $l_h_lg;
+    }
+  }
+}
+.pl-xl {
+  padding-left: $l_h_xl;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-left: $l_h_xl;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-left: $l_h_xl;
+    }
+  }
+}
+
+/***********
+ * Right padding
+ ****************/
+.pr-none {
+  padding-right: 0;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: 0;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: 0;
+    }
+  }
+}
+.pr-xs {
+  padding-right: $l_h_sm;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: $l_h_sm;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: $l_h_sm;
+    }
+  }
+}
+.pr-sm {
+  padding-right: $l_h_sm;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: $l_h_sm;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: $l_h_sm;
+    }
+  }
+}
+.pr-md {
+  padding-right: $l_h_md;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: $l_h_md;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: $l_h_md;
+    }
+  }
+}
+.pr-lg {
+  padding-right: $l_h_lg;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: $l_h_lg;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: $l_h_lg;
+    }
+  }
+}
+.pr-xl {
+  padding-right: $l_h_xl;
+  &-d {
+    @include breakpoint-min($col_bp) {
+      padding-right: $l_h_xl;
+    }
+  }
+  &-m {
+    @include breakpoint-max($col_bp) {
+      padding-right: $l_h_xl;
+    }
+  }
+}

@@ -49,14 +49,17 @@
 @include breakpoint-min(lg) {
   // Alternative max widths
   .wd-wide,
+  .widget-wide,
   .widget--wide {
     max-width: max-width(sm);
   }
   .wd-wider,
+  .widget-wider,
   .widget--wider {
     max-width: max-width(md);
   }
   .wd-full,
+  .widget-full,
   .widget--full {
     max-width: 100%;
     min-width: 100%;
@@ -110,14 +113,21 @@
   ///
   // Collapsed widgets
   ///
+  .wd-r,
+  .widget-right,
   .widget--right {
     margin-right: 0 !important;
     margin-left: auto !important;
   }
+  .wd-l,
+  .widget-left,
   .widget--left {
     margin-left: 0 !important;
     margin-right: auto !important;
   }
+
+  .wd-c,
+  .widget-center,
   .widget--center {
     margin-left: auto !important;
     margin-right: auto !important;

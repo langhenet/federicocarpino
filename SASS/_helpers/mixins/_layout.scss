@@ -516,7 +516,9 @@
     margin-left: spacing($gt);
     margin-right: spacing($gt);
   } @else if $gt == 'grid' {
-    @include grid-marg();
+    @include grid_marg();
+  } @else if $gt == 'col' {
+    @include col_marg();
   }
 }
 
@@ -605,6 +607,8 @@
     padding-left: spacing($gt);
     padding-right: spacing($gt);
   } @else if $gt == 'grid' {
-    @include grid-pad();
+    @include grid_pad();
+  } @else if $gt == 'col' {
+    @include col_pad();
   }
 }
