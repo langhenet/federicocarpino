@@ -31,7 +31,7 @@
 }
 
 @include breakpoint-min(lg) {
-  .footer__column--1-3 {
+  .footer__column--1-4 {
 
     @include flex-child(6, $wd: 33.333);
     max-width: 100%;

@@ -20,6 +20,8 @@
   background-color: transparent;
 }
 
-.overlay--dark {
+.overlay--dark,
+.overlay-dark,
+.o-dark {
   @include color-overlay(dark, 0.5);
 }

@@ -514,7 +514,7 @@ a {
           flex-direction: column; }
 
 @media (min-width: 60em) {
-  .footer__column--1-3 {
+  .footer__column--1-4 {
     -webkit-flex-basis: 33.333%;
         -ms-flex-preferred-size: 33.333%;
             flex-basis: 33.333%;
@@ -1323,6 +1323,17 @@ textarea {
     .ui-datepicker-calendar td:first-child {
       border-left: 0; }
 
+.screen-reader-text {
+  position: absolute;
+  top: -10000em;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
 .page-nav {
   overflow: hidden;
   padding-left: 0;
@@ -1652,16 +1663,16 @@ a {
 /****
  * Margin for section boxed widgets
  *******/
-.elementor-section-boxed .elementor-widget:not([class*="mv-"]):not([class*="mt-"]) {
+.elementor-section-boxed .elementor-widget:not([class*="mv"]):not([class*="mt"]) {
   margin-top: 0.71875rem; }
 
-.elementor-section-boxed .elementor-widget:not([class*="mv-"]):not([class*="mb-"]) {
+.elementor-section-boxed .elementor-widget:not([class*="mv"]):not([class*="mb"]) {
   margin-bottom: 0.71875rem; }
 
-.elementor-section-full_width .elementor-widget:not([class*="mv-"]):not([class*="mt-"]):not(:first-child) {
+.elementor-section-full_width .elementor-widget:not([class*="mv"]):not([class*="mt"]):not(:first-child) {
   margin-top: 0.71875rem; }
 
-.elementor-section-full_width .elementor-widget:not([class*="mv-"]):not([class*="mb-"]):not(:last-child) {
+.elementor-section-full_width .elementor-widget:not([class*="mv"]):not([class*="mb"]):not(:last-child) {
   margin-bottom: 0.71875rem; }
 
 .elementor-widget-video,
@@ -2372,16 +2383,16 @@ a {
 *                     maximim width, that equals the width of the website
  *
  ****************************************************************************************/
-.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mt-"]) {
+.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv"]):not([class*="mt"]) {
   margin-top: 2.875rem; }
   @media (min-width: 60em) {
-    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mt-"]) {
+    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv"]):not([class*="mt"]) {
       margin-top: 5.75rem; } }
 
-.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mb-"]) {
+.elementor-section-boxed:not(.elementor-inner-section):not([class*="mv"]):not([class*="mb"]) {
   margin-bottom: 2.875rem; }
   @media (min-width: 60em) {
-    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv-"]):not([class*="mb-"]) {
+    .elementor-section-boxed:not(.elementor-inner-section):not([class*="mv"]):not([class*="mb"]) {
       margin-bottom: 5.75rem; } }
 
 /**
@@ -3146,9 +3157,13 @@ a {
 .elementor-inner-section {
   background-color: transparent; }
 
-.overlay--dark {
+.overlay--dark,
+.overlay-dark,
+.o-dark {
   position: relative; }
-  .overlay--dark::before {
+  .overlay--dark::before,
+  .overlay-dark::before,
+  .o-dark::before {
     content: '';
     position: absolute;
     top: 0;

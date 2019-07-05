@@ -19,19 +19,19 @@
  * Margin for section boxed widgets
  *******/
 .elementor-section-boxed .elementor-widget {
-  &:not([class*="mv-"]):not([class*="mt-"]) {
+  &:not([class*="mv"]):not([class*="mt"]) {
     margin-top: spacing(2);
   }
-  &:not([class*="mv-"]):not([class*="mb-"]) {
+  &:not([class*="mv"]):not([class*="mb"]) {
     margin-bottom: spacing(2);
   }
 }
 
 .elementor-section-full_width .elementor-widget {
-  &:not([class*="mv-"]):not([class*="mt-"]):not(:first-child) {
+  &:not([class*="mv"]):not([class*="mt"]):not(:first-child) {
     margin-top: spacing(2);
   }
-  &:not([class*="mv-"]):not([class*="mb-"]):not(:last-child) {
+  &:not([class*="mv"]):not([class*="mb"]):not(:last-child) {
     margin-bottom: spacing(2);
   }
 }
