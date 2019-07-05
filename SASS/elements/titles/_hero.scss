@@ -18,6 +18,16 @@
   @include breakpoint-min(md) {
 
   }
+
+  &--bg-default {
+    background-position: center;
+  }
+  &--bg-top-center {
+    background-position: top center;
+  }
+  &--bg-bottom-center {
+    background-position: bottom center;
+  }
 }
 
 .hero-title__inner {

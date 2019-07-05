@@ -1556,6 +1556,12 @@ a {
     left: 0;
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.3); }
+  .hero-title--bg-default {
+    background-position: center; }
+  .hero-title--bg-top-center {
+    background-position: top center; }
+  .hero-title--bg-bottom-center {
+    background-position: bottom center; }
 
 .hero-title__inner {
   display: -webkit-box;
