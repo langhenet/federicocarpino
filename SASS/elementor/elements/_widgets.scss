@@ -5,11 +5,14 @@
  * Widget Widths
  */
 .elementor-widget {
-  max-width: max-width($text-mw);
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   width: 100%;
+
+  .elementor-widget-container {
+    max-width: max-width($text-mw);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /****
@@ -46,23 +49,29 @@
   }
 }
 
-@include breakpoint-min(lg) {
+@include breakpoint-min($col_bp) {
   // Alternative max widths
   .wd-wide,
   .widget-wide,
   .widget--wide {
-    max-width: max-width(sm);
+    .elementor-widget-container {
+      max-width: max-width(ms);
+    }
   }
   .wd-wider,
   .widget-wider,
   .widget--wider {
-    max-width: max-width(md);
+    .elementor-widget-container {
+      max-width: max-width(md);
+    }
   }
   .wd-full,
   .widget-full,
   .widget--full {
-    max-width: 100%;
-    min-width: 100%;
+    .elementor-widget-container {
+      max-width: 100%;
+      min-width: 100%;
+    }
   }
 }
 
@@ -72,64 +81,73 @@
  * WIDGETS HORIZONTAL ALIGN
  */
 
-@include breakpoint-min(lg) {
+ @include breakpoint-min($col_bp) {
 
-  // First column
-  @at-root .elementor-row .elementor-column:first-child {
-    .elementor-widget {
-      margin-left: 0;
-    }
-  }
+   // First column
+   @at-root .elementor-row .elementor-column:first-child {
+     .elementor-widget .elementor-widget-container {
+       margin-left: 0;
+     }
+   }
 
-  // Last column
-  @at-root .elementor-row .elementor-column:last-child {
-    .elementor-widget {
-      margin-right: 0;
-    }
-  }
+   // Last column
+   @at-root .elementor-row .elementor-column:last-child {
+     .elementor-widget .elementor-widget-container {
+       margin-right: 0;
+     }
+   }
 
-  // Center column
-  @at-root .elementor-row .elementor-column:first-child:last-child .elementor-widget {
-    margin-left: auto;
-    margin-right: auto;
-  }
+   // Center column
+   @at-root .elementor-row .elementor-column:first-child:last-child .elementor-widget .elementor-widget-container {
+     margin-left: auto;
+     margin-right: auto;
+   }
 
-  ///
-  // Nested Sections
-  ///
-  .elementor-inner-section .elementor-row .elementor-column:first-child .elementor-widget {
-    margin-left: 0;
-  }
+   ///
+   // Nested Sections
+   ///
+   .elementor-inner-section .elementor-row .elementor-column:first-child .elementor-widget .elementor-widget-container {
+     margin-left: 0;
+   }
 
-  .elementor-inner-section .elementor-row .elementor-column:last-child .elementor-widget {
-    margin-right: 0;
-  }
+   .elementor-inner-section .elementor-row .elementor-column:last-child .elementor-widget .elementor-widget-container  {
+     margin-right: 0;
+   }
 
-  .elementor-inner-section .elementor-row .elementor-column:first-child:last-child .elementor-widget {
-    margin-left: auto;
-    margin-right: auto;
-  }
+   .elementor-inner-section .elementor-row .elementor-column:first-child:last-child .elementor-widget .elementor-widget-container {
+     margin-left: auto;
+     margin-right: auto;
+   }
 
-  ///
-  // Collapsed widgets
-  ///
-  .wd-r,
-  .widget-right,
-  .widget--right {
-    margin-right: 0 !important;
-    margin-left: auto !important;
-  }
-  .wd-l,
-  .widget-left,
-  .widget--left {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
+   ///
+   // Collapsed widgets
+   ///
+   .wd-r,
+   .wd-right,
+   .widget-right,
+   .widget--right {
+     .elementor-widget-container  {
+       margin-right: 0 !important;
+       margin-left: auto !important;
+     }
+   }
+   .wd-l,
+   .wd-left,
+   .widget-left,
+   .widget--left {
+     .elementor-widget-container  {
+       margin-left: 0 !important;
+       margin-right: auto !important;
+     }
+   }
 
-  .wd-c,
-  .widget-center,
-  .widget--center {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
+   .wd-c,
+   .wd-center,
+   .widget-center,
+   .widget--center {
+     .elementor-widget-container  {
+       margin-left: auto !important;
+       margin-right: auto !important;
+     }
+   }
+ }

@@ -1642,11 +1642,12 @@ a {
  * Widget Widths
  */
 .elementor-widget {
-  max-width: 30.25rem;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   width: 100%; }
+  .elementor-widget .elementor-widget-container {
+    max-width: 30.25rem;
+    margin-left: auto;
+    margin-right: auto; }
 
 /****
  * Margin for section boxed widgets
@@ -1673,17 +1674,17 @@ a {
     display: block; }
 
 @media (min-width: 60em) {
-  .wd-wide,
-  .widget-wide,
-  .widget--wide {
-    max-width: 30.25rem; }
-  .wd-wider,
-  .widget-wider,
-  .widget--wider {
+  .wd-wide .elementor-widget-container,
+  .widget-wide .elementor-widget-container,
+  .widget--wide .elementor-widget-container {
+    max-width: 35.25rem; }
+  .wd-wider .elementor-widget-container,
+  .widget-wider .elementor-widget-container,
+  .widget--wider .elementor-widget-container {
     max-width: 42.66667rem; }
-  .wd-full,
-  .widget-full,
-  .widget--full {
+  .wd-full .elementor-widget-container,
+  .widget-full .elementor-widget-container,
+  .widget--full .elementor-widget-container {
     max-width: 100%;
     min-width: 100%; } }
 
@@ -1692,33 +1693,36 @@ a {
  * WIDGETS HORIZONTAL ALIGN
  */
 @media (min-width: 60em) {
-  .elementor-row .elementor-column:first-child .elementor-widget {
+  .elementor-row .elementor-column:first-child .elementor-widget .elementor-widget-container {
     margin-left: 0; }
-  .elementor-row .elementor-column:last-child .elementor-widget {
+  .elementor-row .elementor-column:last-child .elementor-widget .elementor-widget-container {
     margin-right: 0; }
-  .elementor-row .elementor-column:first-child:last-child .elementor-widget {
+  .elementor-row .elementor-column:first-child:last-child .elementor-widget .elementor-widget-container {
     margin-left: auto;
     margin-right: auto; }
-  .elementor-inner-section .elementor-row .elementor-column:first-child .elementor-widget {
+  .elementor-inner-section .elementor-row .elementor-column:first-child .elementor-widget .elementor-widget-container {
     margin-left: 0; }
-  .elementor-inner-section .elementor-row .elementor-column:last-child .elementor-widget {
+  .elementor-inner-section .elementor-row .elementor-column:last-child .elementor-widget .elementor-widget-container {
     margin-right: 0; }
-  .elementor-inner-section .elementor-row .elementor-column:first-child:last-child .elementor-widget {
+  .elementor-inner-section .elementor-row .elementor-column:first-child:last-child .elementor-widget .elementor-widget-container {
     margin-left: auto;
     margin-right: auto; }
-  .wd-r,
-  .widget-right,
-  .widget--right {
+  .wd-r .elementor-widget-container,
+  .wd-right .elementor-widget-container,
+  .widget-right .elementor-widget-container,
+  .widget--right .elementor-widget-container {
     margin-right: 0 !important;
     margin-left: auto !important; }
-  .wd-l,
-  .widget-left,
-  .widget--left {
+  .wd-l .elementor-widget-container,
+  .wd-left .elementor-widget-container,
+  .widget-left .elementor-widget-container,
+  .widget--left .elementor-widget-container {
     margin-left: 0 !important;
     margin-right: auto !important; }
-  .wd-c,
-  .widget-center,
-  .widget--center {
+  .wd-c .elementor-widget-container,
+  .wd-center .elementor-widget-container,
+  .widget-center .elementor-widget-container,
+  .widget--center .elementor-widget-container {
     margin-left: auto !important;
     margin-right: auto !important; } }
 
