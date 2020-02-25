@@ -46,6 +46,9 @@ select {
 .gfield_label {
   @include label(h5);
 }
+.hidden_label .gfield_label {
+  display: none;
+}
 
 .gfield_description {
   @include font(h5);
