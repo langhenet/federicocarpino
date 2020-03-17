@@ -1119,6 +1119,9 @@ select {
   padding-bottom: 0.35938rem;
   display: block; }
 
+.hidden_label .gfield_label {
+  display: none; }
+
 .gfield_description {
   font-family: "Crimson Text", serif;
   font-weight: 400;
@@ -1248,6 +1251,12 @@ textarea {
  * Validation Field
  **/
 .gform_validation_container {
+  display: none; }
+
+/*********************
+ * Hidden Field
+ *********************/
+.gfield_visibility_hidden {
   display: none; }
 
 /************************************************************
