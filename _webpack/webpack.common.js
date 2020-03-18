@@ -1,115 +1,130 @@
-const webpack = require("webpack");
-const path = require('path');
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const autoprefixer = require('autoprefixer')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+// const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 let BASE_URL  = '/';                          //HTML5 history api href for <base>
 let API_URL   = 'http://localhost/';     //API endpoints base
+
+// const mainJSPath = path.resolve(__dirname, '../_src/js', 'main.js');
 const mainCSSPath = path.resolve(__dirname, '../SASS', 'style.scss');
+
 const publicPath = path.resolve(__dirname, '../');
 const imagesPath = path.resolve(__dirname, '../_src/images');
 const fontsPath = path.resolve(__dirname, '../_src/fonts');
 
+//var autoprefixer = require('autoprefixer');
+
+switch(process.env.NODE_ENV){
+  case 'dev':
+    BASE_URL = '/';
+    API_URL  = 'http://clienti.langhe.test/';
+    WP_THEME_LOCATION  = '/wp-content/themes/frontend/'
+    break;
+  case 'prod':
+    BASE_URL = '/';
+    API_URL = 'http://clienti.lovelanghe.com/';
+    WP_THEME_LOCATION  = '/wp-content/themes/frontend/'
+    break;
+  default:
+    //nothing here;
+    break;
+}
+
 module.exports = {
   entry: {
     main: [
-    //  vendorsCSSPath,
-      mainCSSPath
+      // mainJSPath,
+      mainCSSPath,
     ]
   },
   output: {
-    filename: 'style.css'
+    // filename: process.env.NODE_ENV === 'prod' ? 'assets/scripts/[name].js' : 'assets/scripts/[name].js',
+    path: publicPath,
+    publicPath: '/'
   },
   plugins: [
-    new CleanWebpackPlugin(
-      ['../assets/images'],
-      ['../assets/fonts'],
-      {
-        allowExternal: true,
-        verbose: true
+    // new webpack.ProvidePlugin({
+    //   $ : 'jquery',
+    //   $ : 'jQuery',
+    //   objectFitImages: 'object-fit-images'
+    // }),
+    new webpack.DefinePlugin({
+      "BASE_URL": JSON.stringify(BASE_URL),
+      "API_URL": JSON.stringify(API_URL)
     }),
+    new CleanWebpackPlugin(
+      {
+        dry: false,
+        verbose: true,
+        cleanStaleWebpackAssets: false,
+        cleanOnceBeforeBuildPatterns: ['!**/*', 'assets/images' , 'assets/fonts']
+      }
+    ),
+
     // Simply copy assets to dist folder
     new CopyWebpackPlugin([
       { from: imagesPath, to: 'assets/images' },
-      // { from: fontsPath, to: 'assets/fonts' }
+      { from: fontsPath, to: 'assets/fonts' }
     ]),
+
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      fallback: 'style-loader',
+      ignoreOrder: false
+    }),
   ],
-  // output: {
-  //   // filename: process.env.NODE_ENV === 'prod' ? 'assets/scripts/[name].min.js?h=[hash]' : 'assets/scripts/[name].js?h=[hash]',
-  //   path: publicPath,
-  //   // filename: '[name].js',
-  //   publicPath: ''
-  // },
+  resolve: {
+		alias: {
+      // silence is golden
+		}
+	},
   module: {
-    rules: [
-        {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader",
-            {
+		rules: [
+			//SASS compilation
+			{
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'dev'
+            }
+          },
+          'css-loader',
+          {
             loader: 'postcss-loader',
             options: {
-              // url: false,
               plugins: () => [autoprefixer({
-                browsers: [
-                  'last 10 versions',
+                overrideBrowserslist: [
+                  'last 10 versions'
                 ],
                 grid: true
               })]
             }
           },
-        "sass-loader"],
-        // publicPath: "/public",
-        })
-      },
-      {
-        test: /\.(jpg|jpeg|png)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1,
-              name: '[name].[ext]',
-              outputPath: 'assets/images/'
-            }
-          }]
-      },
-      {
-        test: /\.(svg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 1,
-            name: '[name].[ext]',
-            outputPath: 'assets/images/svg/'
-          }
-        }]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 1,
-            name: '[name].[ext]',
-            outputPath: 'assets/fonts/'
-          }
-        }]
-      },
-      {
-        //CASSI
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
+          'sass-loader'
         ]
       },
-    ]
-  }
+      //recognise fonts
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 1,
+                name: '[name].[ext]',
+                outputPath: 'assets/fonts'
+              }
+            }]
+      },
+		],
+	}
 };

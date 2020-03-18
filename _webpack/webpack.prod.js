@@ -1,18 +1,17 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const path = require('path');
-
-const webpack = require("webpack");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const rootPath = path.resolve(__dirname);
+const merge = require('webpack-merge')
+const common = require('./webpack.common.js')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = merge(common, {
+  mode: 'production',
+  // devtool: 'source-map',
+  optimization: {
+		minimize: true
+    // splitChunks: {
+    //   chunks: 'all'
+    // }
+  },
   plugins: [
-		//about SASS compilation
-		new ExtractTextPlugin({
-			filename: "style.css"
-		}),
+    // new BundleAnalyzerPlugin()
   ]
 })

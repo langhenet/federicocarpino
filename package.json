@@ -1,27 +1,37 @@
 {
-  "name": "proto-clienti",
+  "name": "frontend-child",
   "version": "1.0.0",
   "description": "ciao",
-  "main": "gulpfile.js",
+  "dependencies": {
+    "baguettebox.js": "^1.11.0",
+    "jquery": "^3.4.1",
+    "object-fit-images": "^3.2.4",
+    "picturefill": "^3.0.3"
+  },
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
-    "browser-sync": "^2.23.6",
-    "browser-sync-webpack-plugin": "^1.2.0",
-    "clean-webpack-plugin": "^0.1.17",
-    "copy-webpack-plugin": "^4.2.3",
-    "cross-env": "^5.1.1",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.5",
-    "postcss-loader": "^2.0.9",
-    "postcss-scss": "^1.0.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
-    "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-dev-server": "^2.9.7",
-    "webpack-merge": "^4.1.1"
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "^5.2.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
+    "sass-loader": "^8.0.0",
+    "standard": "^14.1.0",
+    "standard-loader": "^7.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.3",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,13 +46,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/langhenet/lgenf.git"
+    "url": "git+https://github.com/langhenet/fontend-child.git"
   },
   "bugs": {
-    "url": "https://github.com/langhenet/lgenf/issues"
+    "url": "https://github.com/langhenet/fontend-child/issues"
   },
-  "homepage": "https://github.com/langhenet/lgenf#readme",
-  "dependencies": {
-    "node-sass": "^4.6.0"
-  }
+  "homepage": "https://github.com/langhenet/fontend-child#readme"
 }
