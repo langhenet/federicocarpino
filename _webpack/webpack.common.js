@@ -1,3 +1,5 @@
+// import '../SASS/style.scss';
+
 const webpack = require('webpack')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
@@ -9,8 +11,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
-let BASE_URL  = '/';                          //HTML5 history api href for <base>
-let API_URL   = 'http://localhost/';     //API endpoints base
 
 // const mainJSPath = path.resolve(__dirname, '../_src/js', 'main.js');
 const mainCSSPath = path.resolve(__dirname, '../SASS', 'style.scss');
@@ -19,18 +19,20 @@ const publicPath = path.resolve(__dirname, '../');
 const imagesPath = path.resolve(__dirname, '../_src/images');
 const fontsPath = path.resolve(__dirname, '../_src/fonts');
 
+// entry_object[build_css + "style"] = static_scss + "../SASS/style.scss";
+
 //var autoprefixer = require('autoprefixer');
 
 switch(process.env.NODE_ENV){
   case 'dev':
     BASE_URL = '/';
     API_URL  = 'http://clienti.langhe.test/';
-    WP_THEME_LOCATION  = '/wp-content/themes/frontend/'
+    WP_THEME_LOCATION  = '/wp-content/themes/frontend-child/'
     break;
   case 'prod':
     BASE_URL = '/';
     API_URL = 'http://clienti.lovelanghe.com/';
-    WP_THEME_LOCATION  = '/wp-content/themes/frontend/'
+    WP_THEME_LOCATION  = '/wp-content/themes/frontend-child/'
     break;
   default:
     //nothing here;
@@ -38,16 +40,17 @@ switch(process.env.NODE_ENV){
 }
 
 module.exports = {
-  entry: {
-    main: [
-      // mainJSPath,
-      mainCSSPath,
-    ]
-  },
+  entry: [mainCSSPath],
+  // entry: {
+  //   main: [
+  //     // mainJSPath,
+  //     mainCSSPath,
+  //   ]
+  // },
   output: {
     // filename: process.env.NODE_ENV === 'prod' ? 'assets/scripts/[name].js' : 'assets/scripts/[name].js',
     path: publicPath,
-    publicPath: '/'
+    // publicPath: '/'
   },
   plugins: [
     // new webpack.ProvidePlugin({
@@ -64,7 +67,7 @@ module.exports = {
         dry: false,
         verbose: true,
         cleanStaleWebpackAssets: false,
-        cleanOnceBeforeBuildPatterns: ['!**/*', 'assets/images' , 'assets/fonts']
+        cleanOnceBeforeBuildPatterns: ['!**/*', 'assets/images' , 'assets/fonts' , 'main.js']
       }
     ),
 
@@ -122,6 +125,18 @@ module.exports = {
                 limit: 1,
                 name: '[name].[ext]',
                 outputPath: 'assets/fonts'
+              }
+            }]
+      },
+      {
+        test: /\.(jpg|png|svg|jpeg)$/,
+        use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 1,
+                name: '[name].[ext]',
+                outputPath: 'assets/images'
               }
             }]
       },

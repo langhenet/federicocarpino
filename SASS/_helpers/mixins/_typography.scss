@@ -147,14 +147,15 @@
 
   @font-face {
     font-family: '#{$font-family}';
-    // src: url('../fonts/#{$font-filename}.eot');
-     src: url('assets/fonts/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
-     url('assets/fonts/#{$font-filename}.woff') format('woff'),
-     url('assets/fonts/#{$font-filename}.woff2') format('woff2');
-    //src: url('/assets/fonts/#{$font-filename}.otf') format('otf');
-    // url('../fonts/#{$font-filename}.ttf') format('truetype'),
-    // url('../fonts/#{$font-filename}.svg##{$font-family}') format('svg');
-     // url('../assets/fonts/#{$font-filename}.woff') format('woff');
+    // src: url('../_src/fonts/#{$font-filename}.eot');
+    //  src: url('../_src/fonts/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+    //  url('../_src/fonts/#{$font-filename}.woff') format('woff'),
+    //  url('../_src/fonts/#{$font-filename}.woff2') format('woff2');
+    //src: url('/../_src/fonts/#{$font-filename}.otf') format('otf');
+    // url('../_src/fonts/#{$font-filename}.ttf') format('truetype'),
+    // url('../_src/fonts/#{$font-filename}.svg##{$font-family}') format('svg');
+     // url('../../_src/fonts/#{$font-filename}.woff') format('woff');
+    src: url('../_src/fonts/#{$font-filename}.ttf') format('truetype');
     font-weight: $font-weight;
     font-style: $font-style;
     font-stretch: $font-stretch;
