@@ -12,25 +12,9 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' , 99 );
 
-// function get_enqueued_scripts () {
-//     $scripts = wp_scripts();
-//     debug( array_keys( $scripts->groups ) );
-// }
-// add_action( 'wp_head', 'get_enqueued_scripts' );
-
-// function get_enqueued_styles () {
-//   global $wp_styles;
-//   foreach( $wp_styles->queue as $style ) :
-//       debug($style);
-//   endforeach;
-// }
-// add_action( 'wp_head', 'get_enqueued_styles' );
 
 function remove_some_styles() {
   wp_dequeue_style( 'elementor-animations' );
-
-
-
 
   if (!is_admin()) {
     // wp_dequeue_style( 'elementor-icons' );
